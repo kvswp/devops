@@ -1,0 +1,12 @@
+- hosts: all
+  vars:
+    x: swaroop
+  tasks:
+    - name: create a file
+      file:
+        path: /tmp/mysrc
+        state: directory
+    - name: print something
+      debug:
+        msg: "folder added"
+        msg: "hi {{x}}, how are you"

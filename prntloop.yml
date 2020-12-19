@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+    - name: printing multiple messages using loop
+      debug:
+        msg: "{{item}}"
+      with_items:
+              - one
+              - two
+              - three
+              - four      

@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+    - name: execute linux commands
+      shell: lsb_release -a
+      register: out
+    - name: print something
+      debug:
+        msg: "{{out.stdout_lines}}"  

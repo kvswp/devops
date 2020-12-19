@@ -1,0 +1,18 @@
+- hosts: all
+  tasks:
+    - name: copy file to remote
+      copy:
+        src: /home/swaroop/kvs/lscpt.sh
+        dest: /home/swaroop   
+    - name: execute permission for script
+      file:
+        path: /home/swaroop/lscpt.sh
+        owner: swaroop 
+        group: swaroop
+        mode: '0755'      
+    - name: execute linux commands
+      shell: rm lscpt.sh;rm -rf mydemo
+      register: out
+    - name: print something
+      debug:
+        msg: "{{out.stdout_lines}}"  

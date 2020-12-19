@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: remove a file
+      file:
+        path: /home/swaroop/mydemo
+        state: absent
+    - name: print something
+      debug:
+        msg: "remove success"  
