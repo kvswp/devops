@@ -1,0 +1,13 @@
+- name: create EC2 Instance
+  hosts: localhost
+  tasks:
+    - ec2:
+        key_name: swpsec #keyname
+        instance_type: t2.micro
+        image: ami-0a91cd140a1fc148a
+        wait: yes
+        group: swpsec
+        count: 3
+        vpc_subnet_id: subnet-170d765b
+        assign_public_ip: yes
+        region: us-east-2

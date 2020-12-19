@@ -1,0 +1,10 @@
+create user in aws, get accees keyd ids, take backup
+then install required tools on machine from where we want to run the ec2 playbook
+
+sudo apt-get update
+sudo apt install python-pip
+sudo pip install awscli
+sudo pip install boto
+
+then "aws configure" and provide the access keys
+create playbook for ec2 instance and run it

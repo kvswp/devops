@@ -1,0 +1,11 @@
+- hosts: all
+  tasks:
+    - name: check file exists
+      stat:
+        path: /home/swaroop/kvs.txt
+        register: p 
+    - name: create file if not there
+      file:
+        path: /home/swaroop/kvs.txt
+        state: touch
+      when: p.stat.isreg == False      

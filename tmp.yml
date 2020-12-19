@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+    - name: Get stats of a file
+      stat:
+        path: /home/swaroop/kvs.txt
+        register: st
+    - fail:
+        msg: "Whoops! file ownership has changed"
+      when: st.stat.pw_name != 'root'
+          
